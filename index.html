@@ -1,11 +1,22 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#123451"><title>Paddy Trade Profit Planner</title>
 <style>
-:root{--ink:#18324b;--muted:#66798d;--line:#e2eaf2;--bg:#f3f7fb;--blue:#2563eb;--green:#07845c;--purple:#7048e8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}header{background:linear-gradient(120deg,#102a43,#1c5680,#2563a6);color:white;padding:26px 18px 32px}.wrap{max-width:1180px;margin:auto;}.top{display:flex;justify-content:space-between;gap:10px;color:#d9eaff;font-size:12px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}h1{font-size:clamp(27px,4vw,39px);line-height:1.12;margin:22px 0 8px;letter-spacing:-.03em}.sub{color:#d8e8f6;margin:0;max-width:700px}main{padding:42px 0 40px}.layout{display:grid;grid-template-columns:330px 1fr;gap:17px;align-items:start}.panel,.card{background:white;border:1px solid var(--line);border-radius:15px;box-shadow:0 5px 18px #18324b0a}.panel{padding:18px;position:sticky;top:12px}.panel h2,.card h2{font-size:17px;margin:0}.hint,.cardhead p{font-size:12px;color:var(--muted);margin:3px 0 15px}.group{font-size:11px;color:#8192a5;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-top:1px solid var(--line);padding-top:14px;margin:18px 0 10px}.field{margin-bottom:12px}.field label{display:block;font-size:12px;font-weight:750;margin-bottom:5px}.field small{color:var(--muted);font-weight:500}.field input,.field select{width:100%;min-height:41px;padding:9px 10px;border:1px solid #cbd7e4;border-radius:8px;font:inherit;color:var(--ink);background:#fff;outline:none}.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2563eb18}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.money{position:relative}.money b{position:absolute;left:10px;top:8px;color:#7b8da0}.money input{padding-left:25px}.radio{display:flex;gap:7px}.radio label{flex:1;text-align:center;border:1px solid #d2dce8;border-radius:8px;padding:8px 4px;font-size:11px;cursor:pointer}.radio input{position:absolute;opacity:0}.radio input:checked+label{background:#edf4ff;border-color:#6a9af1;color:#1d4ed8}.note{background:#eff6ff;border:1px solid #d8e8ff;padding:10px;border-radius:9px;color:#355778;font-size:11px}.buttons{display:flex;gap:8px;margin-top:14px}.btn{border:0;border-radius:8px;padding:10px 12px;font-weight:750;cursor:pointer}.primary{background:#1d4ed8;color:white;flex:1}.secondary{background:#edf2f7;color:#334155}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:15px}.metric{padding:14px;border-radius:12px;color:white;min-width:0}.metric:nth-child(1){background:linear-gradient(130deg,#2563eb,#6094f4)}.metric:nth-child(2){background:linear-gradient(130deg,#07845c,#20aa7e)}.metric:nth-child(3){background:linear-gradient(130deg,#7048e8,#9878f5)}.metric label{font-size:11px;font-weight:700;opacity:.9}.metric strong{display:block;font-size:clamp(19px,2.5vw,26px);letter-spacing:-.03em;margin:4px 0}.metric small{font-size:10px;opacity:.85}.card{padding:17px;margin-bottom:15px}.cardhead{display:flex;justify-content:space-between;gap:10px;margin-bottom:13px}.pill{font-size:10px;background:#edf4ff;color:#2457b7;border-radius:20px;padding:5px 9px;font-weight:800;white-space:nowrap}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.scenario{border:1px solid var(--line);border-radius:11px;overflow:hidden}.scenario header{padding:10px 12px;display:flex;justify-content:space-between;gap:8px;font-size:12px;font-weight:750}.scenario:nth-child(odd) header{background:#2563eb}.scenario:nth-child(even) header{background:#7048e8}.scenario header span{opacity:.85;font-size:11px}.body{padding:12px}.muted{font-size:10px;color:var(--muted);font-weight:750}.profit{font-size:24px;font-weight:850;color:var(--green);letter-spacing:-.03em;margin:2px 0 9px}.profit.neg{color:#c2414b}.line{display:flex;justify-content:space-between;gap:8px;border-top:1px dashed #e7edf3;padding:6px 0;font-size:11px}.line span{color:var(--muted)}.line b{text-align:right;font-variant-numeric:tabular-nums}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}th{background:#f7f9fc;color:#66798d;font-size:10px;text-transform:uppercase}td strong{color:var(--green)}.breakdown{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{padding:12px;background:#f7f9fc;border:1px solid var(--line);border-radius:10px}.mini h3{font-size:12px;margin:0}.mini .profit{font-size:19px}.mini p{font-size:10px;color:var(--muted);margin:0}.warning{margin-top:12px;padding:11px;border-left:4px solid #e5a12b;background:#fff8e8;border-radius:7px;color:#78521b;font-size:11px}footer{text-align:center;color:#8291a3;font-size:10px;padding:0 12px 22px}
+:root{--ink:#18324b;--muted:#66798d;--line:#e2eaf2;--bg:#f3f7fb;--blue:#2563eb;--green:#07845c;--purple:#7048e8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI","Noto Sans Kannada","Nirmala UI",Tunga,sans-serif}header{background:linear-gradient(120deg,#102a43,#1c5680,#2563a6);color:white;padding:26px 18px 32px}.wrap{max-width:1180px;margin:auto;}.top{display:flex;justify-content:space-between;gap:10px;color:#d9eaff;font-size:12px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}h1{font-size:clamp(27px,4vw,39px);line-height:1.12;margin:22px 0 8px;letter-spacing:-.03em}.sub{color:#d8e8f6;margin:0;max-width:700px}main{padding:42px 0 40px}.layout{display:grid;grid-template-columns:330px 1fr;gap:17px;align-items:start}.panel,.card{background:white;border:1px solid var(--line);border-radius:15px;box-shadow:0 5px 18px #18324b0a}.panel{padding:18px;position:sticky;top:12px}.panel h2,.card h2{font-size:17px;margin:0}.hint,.cardhead p{font-size:12px;color:var(--muted);margin:3px 0 15px}.group{font-size:11px;color:#8192a5;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-top:1px solid var(--line);padding-top:14px;margin:18px 0 10px}.field{margin-bottom:12px}.field label{display:block;font-size:12px;font-weight:750;margin-bottom:5px}.field small{color:var(--muted);font-weight:500}.field input,.field select{width:100%;min-height:41px;padding:9px 10px;border:1px solid #cbd7e4;border-radius:8px;font:inherit;color:var(--ink);background:#fff;outline:none}.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2563eb18}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.money{position:relative}.money b{position:absolute;left:10px;top:8px;color:#7b8da0}.money input{padding-left:25px}.radio{display:flex;gap:7px}.radio label{flex:1;text-align:center;border:1px solid #d2dce8;border-radius:8px;padding:8px 4px;font-size:11px;cursor:pointer}.radio input{position:absolute;opacity:0}.radio input:checked+label{background:#edf4ff;border-color:#6a9af1;color:#1d4ed8}.note{background:#eff6ff;border:1px solid #d8e8ff;padding:10px;border-radius:9px;color:#355778;font-size:11px}.buttons{display:flex;gap:8px;margin-top:14px}.btn{border:0;border-radius:8px;padding:10px 12px;font-weight:750;cursor:pointer}.primary{background:#1d4ed8;color:white;flex:1}.secondary{background:#edf2f7;color:#334155}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:15px}.metric{padding:14px;border-radius:12px;color:white;min-width:0}.metric:nth-child(1){background:linear-gradient(130deg,#2563eb,#6094f4)}.metric:nth-child(2){background:linear-gradient(130deg,#07845c,#20aa7e)}.metric:nth-child(3){background:linear-gradient(130deg,#7048e8,#9878f5)}.metric label{font-size:11px;font-weight:700;opacity:.9}.metric strong{display:block;font-size:clamp(19px,2.5vw,26px);letter-spacing:-.03em;margin:4px 0}.metric small{font-size:10px;opacity:.85}.card{padding:17px;margin-bottom:15px}.cardhead{display:flex;justify-content:space-between;gap:10px;margin-bottom:13px}.pill{font-size:10px;background:#edf4ff;color:#2457b7;border-radius:20px;padding:5px 9px;font-weight:800;white-space:nowrap}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.scenario{border:1px solid var(--line);border-radius:11px;overflow:hidden}.scenario header{padding:10px 12px;display:flex;justify-content:space-between;gap:8px;font-size:12px;font-weight:750}.scenario:nth-child(odd) header{background:#2563eb}.scenario:nth-child(even) header{background:#7048e8}.scenario header span{opacity:.85;font-size:11px}.body{padding:12px}.muted{font-size:10px;color:var(--muted);font-weight:750}.profit{font-size:24px;font-weight:850;color:var(--green);letter-spacing:-.03em;margin:2px 0 9px}.profit.neg{color:#c2414b}.line{display:flex;justify-content:space-between;gap:8px;border-top:1px dashed #e7edf3;padding:6px 0;font-size:11px}.line span{color:var(--muted)}.line b{text-align:right;font-variant-numeric:tabular-nums}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}th{background:#f7f9fc;color:#66798d;font-size:10px;text-transform:uppercase}td strong{color:var(--green)}.breakdown{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{padding:12px;background:#f7f9fc;border:1px solid var(--line);border-radius:10px}.mini h3{font-size:12px;margin:0}.mini .profit{font-size:19px}.mini p{font-size:10px;color:var(--muted);margin:0}.warning{margin-top:12px;padding:11px;border-left:4px solid #e5a12b;background:#fff8e8;border-radius:7px;color:#78521b;font-size:11px}footer{text-align:center;color:#8291a3;font-size:10px;padding:0 12px 22px}
+/* ---- Language selector + Kannada tweaks ---- */
+.top{align-items:center}
+.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end;min-width:0}
+.langbox{display:flex;align-items:center;gap:6px;letter-spacing:0;text-transform:none}
+.langbox select{min-height:34px;padding:5px 28px 5px 10px;border-radius:8px;border:1px solid #ffffff55;background:#ffffff22;color:#fff;font:inherit;font-size:13px;font-weight:700;cursor:pointer;max-width:100%}
+.langbox select option{color:#18324b;background:#fff}
+.langbox select:focus{outline:2px solid #fff;outline-offset:2px}
+html[lang=kn] body{line-height:1.7}
+html[lang=kn] h1,html[lang=kn] .metric strong,html[lang=kn] .profit{letter-spacing:0;line-height:1.35}
+html[lang=kn] .top,html[lang=kn] .group,html[lang=kn] th{letter-spacing:0}
+@media(max-width:580px){.toolbar{justify-content:space-between;width:100%}}
 /* ---- Responsive fixes ---- */
 html{-webkit-text-size-adjust:100%}
 html,body{max-width:100%;overflow-x:clip}
-.wrap{width:100%;padding:0 16px}
+.wrap{width:100%;padding-left:16px;padding-right:16px}
 .layout>*,.panel,.card,section,.metric,.scenario,.mini{min-width:0}
 .layout{grid-template-columns:minmax(0,330px) minmax(0,1fr)}
 .two,.grid,.breakdown,.summary{grid-template-columns:repeat(var(--c,2),minmax(0,1fr))}
@@ -20,8 +31,8 @@ html,body{max-width:100%;overflow-x:clip}
 @media(max-width:850px){.layout{grid-template-columns:minmax(0,1fr)}.panel{position:static}}
 @media(max-width:580px){
  header{padding:20px 0 24px}
- .wrap{padding:0 12px}
- main{padding:20px 0 24px}
+ .wrap{padding-left:12px;padding-right:12px}
+ main{padding-top:24px;padding-bottom:24px}
  .top{flex-direction:column;gap:4px;font-size:11px}
  h1{margin:16px 0 8px}
  .two,.grid,.breakdown,.summary{--c:1}
@@ -43,41 +54,139 @@ html,body{max-width:100%;overflow-x:clip}
  td:first-child{background:#f7f9fc;text-align:left}
  td:first-child::before{display:none}
 }
+/* ---- Glass + gradient theme ---- */
+body{position:relative;background:transparent}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(520px 420px at 8% 8%,#93c5fd99,transparent 65%),radial-gradient(480px 420px at 92% 18%,#c4b5fd99,transparent 65%),radial-gradient(560px 480px at 15% 85%,#99f6e4aa,transparent 65%),radial-gradient(520px 440px at 90% 92%,#f9a8d466,transparent 65%),linear-gradient(180deg,#e8f1fc,#f1eefc)}
+header{background:radial-gradient(420px 260px at 88% 0%,#a78bfacc,transparent 70%),radial-gradient(380px 260px at 8% 110%,#22d3ee88,transparent 70%),linear-gradient(120deg,#0f2742,#1c5680 55%,#5b4bd5);border-radius:0 0 26px 26px;box-shadow:0 10px 30px #1e3a8a33}
+.panel,.card,.mini{background:linear-gradient(145deg,#ffffffcc,#ffffff80);-webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%);border:1px solid #ffffffb3;box-shadow:0 10px 34px #1e3a8a1a,inset 0 1px 0 #ffffffcc}
+.mini{background:linear-gradient(145deg,#ffffffb3,#ffffff66);box-shadow:inset 0 1px 0 #fff,0 4px 14px #1e3a8a12}
+.field input,.field select{background:#ffffffb8;border:1px solid #b7c6d8aa;box-shadow:inset 0 1px 2px #1e3a8a0d}
+.field input:focus,.field select:focus{background:#fff}
+.radio label{background:#ffffff99;border-color:#c4d2e2}
+.radio input:checked+label{background:linear-gradient(135deg,#dbeafe,#ede9fe);border-color:#7c9cf3;box-shadow:0 2px 8px #2563eb22}
+.note{background:linear-gradient(135deg,#eaf3ffcc,#f1ecffcc);border-color:#ffffffaa}
+.pill{background:linear-gradient(135deg,#dbeafe,#e9ddff);color:#3b34b8;border:1px solid #ffffffaa}
+.primary{background:linear-gradient(135deg,#2563eb,#7048e8);box-shadow:0 6px 16px #4f46e555}
+.secondary{background:#ffffffaa;border:1px solid #cdd8e5}
+.metric{position:relative;overflow:hidden;box-shadow:0 8px 22px #1e3a8a2e;border:1px solid #ffffff55}
+.metric::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(160deg,#ffffff40,transparent 55%)}
+.metric>*{position:relative;z-index:1}
+.metric:nth-child(1){background:linear-gradient(130deg,#2563eb,#38bdf8)}
+.metric:nth-child(2){background:linear-gradient(130deg,#059669,#34d399)}
+.metric:nth-child(3){background:linear-gradient(130deg,#6d3fe0,#e879f9)}
+.scenario{background:linear-gradient(160deg,#ffffffcc,#ffffff77);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid #ffffffb3;box-shadow:0 6px 20px #1e3a8a14}
+.scenario:nth-child(odd) header{background:linear-gradient(120deg,#2563eb,#22b8e8)}
+.scenario:nth-child(even) header{background:linear-gradient(120deg,#7048e8,#d36bf0)}
+.profit{background:linear-gradient(120deg,#047857,#10b981);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.profit.neg{background:linear-gradient(120deg,#b91c1c,#f43f5e);-webkit-background-clip:text;background-clip:text}
+th{background:#ffffff99}
+tbody tr:hover td{background:#ffffff66}
+.warning{background:linear-gradient(135deg,#fff6df,#ffeccc);border-top:1px solid #fff}
+footer{color:#6b7c90}
+@media(max-width:580px){tr{background:linear-gradient(160deg,#ffffffcc,#ffffff80)}td:first-child{background:linear-gradient(120deg,#e8f0ff,#f0e9ff)}header{border-radius:0 0 22px 22px}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.panel,.card,.scenario,.mini{background:#fff}}
+/* ---- Slim header + hero card ---- */
+header{padding:14px 0}
+.top{font-size:15px;font-weight:800;letter-spacing:.04em}
+.top>span{font-size:16px;color:#fff}
+main{padding-top:28px}
+.hero{position:relative;overflow:hidden;margin-bottom:22px;padding:24px 26px;background:linear-gradient(135deg,#ffffffe6,#ffffff80),linear-gradient(120deg,#dbeafe,#ede9fe)}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#2563eb,#7048e8,#e879f9)}
+.hero h1{margin:4px 0 8px;font-size:clamp(24px,4vw,36px);background:linear-gradient(110deg,#123451,#2563eb 55%,#7048e8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hero .sub{color:#4a6178;max-width:760px;font-size:15px}
+@media(max-width:580px){
+ header{padding:12px 0}
+ .top{flex-direction:row;flex-wrap:nowrap;justify-content:space-between;gap:10px;font-size:13px}
+ .top>span{font-size:14px}
+ .toolbar{width:auto;flex:none}
+ .langbox label{display:none}
+ .langbox select{font-size:14px}
+ main{padding-top:20px}
+ .hero{padding:18px 16px;margin-bottom:16px}
+ .hero h1{font-size:23px}
+ .hero .sub{font-size:14px}
+}
+@media print{body::before{display:none}header{box-shadow:none}.panel,.card,.scenario,.mini{-webkit-backdrop-filter:none;backdrop-filter:none;background:#fff;box-shadow:none}.profit{-webkit-text-fill-color:currentColor;background:none;color:#07845c}.profit.neg{color:#c2414b}}
 @media print{.panel{position:static}.buttons{display:none}.layout{display:block}.panel,.card{box-shadow:none;break-inside:avoid}}
 </style></head><body>
-<header><div class="wrap"><div class="top"><span>Paddy Trade Planner</span><span>Offline · Deployable</span></div><h1>Know your profit before you trade.</h1><p class="sub">Plan paddy packet purchases, compare selling prices, include handling charges and understand the cost of borrowing.</p></div></header>
-<main class="wrap"><div class="layout">
-<aside class="panel"><h2>Business inputs</h2><p class="hint">Edit any value. All results recalculate instantly.</p>
-<div class="group">Stock & trading</div>
-<div class="field"><label>Number of packets</label><input id="qty" type="number" min="1" value="500"></div>
-<div class="two"><div class="field"><label>Buy price <small>/ packet</small></label><div class="money"><b>₹</b><input id="buy" type="number" min="0" value="2500"></div></div><div class="field"><label>Sell price A</label><div class="money"><b>₹</b><input id="sell1" type="number" min="0" value="3200"></div></div></div>
-<div class="field"><label>Sell price B <small>comparison</small></label><div class="money"><b>₹</b><input id="sell2" type="number" min="0" value="3500"></div></div>
-<div class="field"><label>Handling / other charges <small>per packet</small></label><div class="money"><b>₹</b><input id="expense" type="number" min="0" value="180"></div></div>
-<div class="group">Borrowing details</div>
-<div class="field"><label>Loan amount (₹)</label><input id="loan" type="number" min="0" value="1250000"></div>
-<div class="field"><label>Interest rate format</label><div class="radio"><div class="opt"><input type="radio" name="type" id="annual" value="annual" checked><label for="annual">Annual %</label></div><div class="opt"><input type="radio" name="type" id="monthly" value="monthly"><label for="monthly">Monthly ₹ per ₹100</label></div></div></div>
+<header><div class="wrap"><div class="top"><span data-i18n="brand">Paddy Trade Planner</span><div class="toolbar"><div class="langbox"><label for="lang" data-i18n="langLabel">Language</label><select id="lang" aria-label="Language"><option value="en">English</option><option value="kn">ಕನ್ನಡ</option></select></div></div></div></div></header>
+<main class="wrap"><section class="card hero"><h1 data-i18n="h1">Know your profit before you trade.</h1><p class="sub" data-i18n="sub">Plan paddy packet purchases, compare selling prices, include handling charges and understand the cost of borrowing.</p></section><div class="layout">
+<aside class="panel"><h2 data-i18n="inputs">Business inputs</h2><p class="hint" data-i18n="hint">Edit any value. All results recalculate instantly.</p>
+<div class="group" data-i18n="gStock">Stock & trading</div>
+<div class="field"><label data-i18n="qty">Number of packets</label><input id="qty" type="number" min="1" value="500"></div>
+<div class="two"><div class="field"><label><span data-i18n="buy">Buy price</span> <small data-i18n="perPkt">/ packet</small></label><div class="money"><b>₹</b><input id="buy" type="number" min="0" value="2500"></div></div><div class="field"><label data-i18n="sellA">Sell price A</label><div class="money"><b>₹</b><input id="sell1" type="number" min="0" value="3200"></div></div></div>
+<div class="field"><label><span data-i18n="sellB">Sell price B</span> <small data-i18n="comparison">comparison</small></label><div class="money"><b>₹</b><input id="sell2" type="number" min="0" value="3500"></div></div>
+<div class="field"><label><span data-i18n="handlingLbl">Handling / other charges</span> <small data-i18n="perPacketS">per packet</small></label><div class="money"><b>₹</b><input id="expense" type="number" min="0" value="180"></div></div>
+<div class="group" data-i18n="gLoan">Borrowing details</div>
+<div class="field"><label data-i18n="loanAmt">Loan amount (₹)</label><input id="loan" type="number" min="0" value="1250000"></div>
+<div class="field"><label data-i18n="rateFmt">Interest rate format</label><div class="radio"><div class="opt"><input type="radio" name="type" id="annual" value="annual" checked><label for="annual" data-i18n="annualPct">Annual %</label></div><div class="opt"><input type="radio" name="type" id="monthly" value="monthly"><label for="monthly" data-i18n="monthlyPer100">Monthly ₹ per ₹100</label></div></div></div>
 <div class="field"><label id="rateLabel">Annual interest rate (%)</label><input id="rate" type="number" min="0" step=".01" value="10.5"></div>
-<div class="field"><label>Interest calculation method</label><select id="method"><option value="simple">Simple interest · Full loan outstanding</option><option value="emi">Reducing-balance EMI · Repaid monthly</option></select></div>
-<div class="field"><label>Compare sale periods (months)</label><div class="two"><input id="m1" type="number" min="1" value="5" aria-label="Period A"><input id="m2" type="number" min="1" value="10" aria-label="Period B"></div></div>
+<div class="field"><label data-i18n="method">Interest calculation method</label><select id="method"><option value="simple" data-i18n="mSimple">Simple interest · Full loan outstanding</option><option value="emi" data-i18n="mEmi">Reducing-balance EMI · Repaid monthly</option></select></div>
+<div class="field"><label data-i18n="periods">Compare sale periods (months)</label><div class="two"><input id="m1" type="number" min="1" value="5" aria-label="Period A" data-i18n-aria="periodA"><input id="m2" type="number" min="1" value="10" aria-label="Period B" data-i18n-aria="periodB"></div></div>
 <div class="note" id="rateNote">10.5% annual = 0.875% monthly. Full principal remains outstanding in simple-interest mode.</div>
-<div class="buttons"><button class="btn primary" id="reset">Reset example</button><button class="btn secondary" id="print">Print</button></div></aside>
+<div class="buttons"><button class="btn primary" id="reset" data-i18n="reset">Reset example</button><button class="btn secondary" id="print" data-i18n="print">Print</button></div></aside>
 <section>
-<div class="summary"><div class="metric"><label>Total purchase cost</label><strong id="purchase">₹12,50,000</strong><small>Packets × buy price</small></div><div class="metric"><label>Total handling costs</label><strong id="handling">₹90,000</strong><small>Packets × charges / packet</small></div><div class="metric"><label>Monthly interest cost</label><strong id="monthlyCost">₹10,938</strong><small id="monthlyRate">0.875% monthly</small></div></div>
-<div class="card"><div class="cardhead"><div><h2>Profit scenarios</h2><p>Each selling price is compared across both holding periods.</p></div><span class="pill" id="loanTag">Loan: ₹12,50,000</span></div><div class="grid" id="scenarios"></div></div>
-<div class="card"><div class="cardhead"><div><h2>Side-by-side comparison</h2><p>Sales, gross profit, borrowing interest and net profit.</p></div><span class="pill">4 scenarios</span></div><div class="tablewrap"><table><thead><tr><th>Scenario</th><th>Sales</th><th>Gross profit</th><th>Interest</th><th>Net profit</th></tr></thead><tbody id="rows"></tbody></table></div></div>
-<div class="card"><div class="cardhead"><div><h2>Business breakdown</h2><p>Break-even price and per-packet return.</p></div></div><div class="breakdown"><div class="mini"><h3>Break-even selling price</h3><div class="profit" id="breakEven">₹2,? / packet</div><p>Minimum estimated price to cover purchase, handling and interest for the first scenario period.</p></div><div class="mini"><h3>Net profit per packet</h3><div class="profit" id="perPacket">₹0</div><p>First scenario net profit divided by packet count.</p></div></div><div class="warning" id="assumption">Simple-interest mode assumes the entire loan remains outstanding for the selected period. Principal repayment is separate, not an expense.</div></div>
-</section></div></main><footer>Paddy Trade Planner · Estimates only. Add transport, storage, labour, taxes, processing fees and any other costs before making a business decision.</footer>
+<div class="summary"><div class="metric"><label data-i18n="mPurchase">Total purchase cost</label><strong id="purchase">₹12,50,000</strong><small data-i18n="mPurchaseS">Packets × buy price</small></div><div class="metric"><label data-i18n="mHandling">Total handling costs</label><strong id="handling">₹90,000</strong><small data-i18n="mHandlingS">Packets × charges / packet</small></div><div class="metric"><label data-i18n="mMonthly">Monthly interest cost</label><strong id="monthlyCost">₹10,938</strong><small id="monthlyRate">0.875% monthly</small></div></div>
+<div class="card"><div class="cardhead"><div><h2 data-i18n="cScen">Profit scenarios</h2><p data-i18n="cScenP">Each selling price is compared across both holding periods.</p></div><span class="pill" id="loanTag">Loan: ₹12,50,000</span></div><div class="grid" id="scenarios"></div></div>
+<div class="card"><div class="cardhead"><div><h2 data-i18n="cComp">Side-by-side comparison</h2><p data-i18n="cCompP">Sales, gross profit, borrowing interest and net profit.</p></div><span class="pill" data-i18n="fourScen">4 scenarios</span></div><div class="tablewrap"><table><thead><tr><th data-i18n="thScen">Scenario</th><th data-i18n="thSales">Sales</th><th data-i18n="thGross">Gross profit</th><th data-i18n="thInt">Interest</th><th data-i18n="thNet">Net profit</th></tr></thead><tbody id="rows"></tbody></table></div></div>
+<div class="card"><div class="cardhead"><div><h2 data-i18n="cBreak">Business breakdown</h2><p data-i18n="cBreakP">Break-even price and per-packet return.</p></div></div><div class="breakdown"><div class="mini"><h3 data-i18n="beTitle">Break-even selling price</h3><div class="profit" id="breakEven">₹2,? / packet</div><p data-i18n="beDesc">Minimum estimated price to cover purchase, handling and interest for the first scenario period.</p></div><div class="mini"><h3 data-i18n="ppTitle">Net profit per packet</h3><div class="profit" id="perPacket">₹0</div><p data-i18n="ppDesc">First scenario net profit divided by packet count.</p></div></div><div class="warning" id="assumption">Simple-interest mode assumes the entire loan remains outstanding for the selected period. Principal repayment is separate, not an expense.</div></div>
+</section></div></main><footer data-i18n="footer">Paddy Trade Planner · Estimates only. Add transport, storage, labour, taxes, processing fees and any other costs before making a business decision.</footer>
 <script>
 const $=id=>document.getElementById(id), money=n=>'₹'+Math.round(Number.isFinite(n)?n:0).toLocaleString('en-IN'), precise=n=>'₹'+(Number.isFinite(n)?n:0).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}), val=id=>Math.max(0,Number($(id).value)||0);
+
+const I18N={
+en:{title:'Paddy Trade Profit Planner',brand:'Paddy Trade Planner',offline:'Offline · Deployable',langLabel:'Language',
+h1:'Know your profit before you trade.',sub:'Plan paddy packet purchases, compare selling prices, include handling charges and understand the cost of borrowing.',
+inputs:'Business inputs',hint:'Edit any value. All results recalculate instantly.',gStock:'Stock & trading',qty:'Number of packets',buy:'Buy price',perPkt:'/ packet',
+sellA:'Sell price A',sellB:'Sell price B',comparison:'comparison',handlingLbl:'Handling / other charges',perPacketS:'per packet',gLoan:'Borrowing details',loanAmt:'Loan amount (₹)',
+rateFmt:'Interest rate format',annualPct:'Annual %',monthlyPer100:'Monthly ₹ per ₹100',method:'Interest calculation method',
+mSimple:'Simple interest · Full loan outstanding',mEmi:'Reducing-balance EMI · Repaid monthly',periods:'Compare sale periods (months)',periodA:'Period A',periodB:'Period B',
+reset:'Reset example',print:'Print',mPurchase:'Total purchase cost',mPurchaseS:'Packets × buy price',mHandling:'Total handling costs',mHandlingS:'Packets × charges / packet',mMonthly:'Monthly interest cost',
+monthlyFmt:'{v}% monthly',cScen:'Profit scenarios',cScenP:'Each selling price is compared across both holding periods.',loan:'Loan: ',
+cComp:'Side-by-side comparison',cCompP:'Sales, gross profit, borrowing interest and net profit.',fourScen:'4 scenarios',
+thScen:'Scenario',thSales:'Sales',thGross:'Gross profit',thInt:'Interest',thNet:'Net profit',
+cBreak:'Business breakdown',cBreakP:'Break-even price and per-packet return.',beTitle:'Break-even selling price',
+beDesc:'Minimum estimated price to cover purchase, handling and interest for the first scenario period.',ppTitle:'Net profit per packet',ppDesc:'First scenario net profit divided by packet count.',
+sellAt:'Sell at {p} / packet',months:'months',estNet:'ESTIMATED NET PROFIT',totalSales:'Total sales',grossTrading:'Gross trading profit',handlingCosts:'Handling / other costs',loanInterest:'Loan interest',netPerPkt:'Net profit / packet',
+rateLblA:'Annual interest rate (%)',rateLblM:'Monthly interest per ₹100 (₹)',
+noteA:'{r}% annual = {m}% monthly.',noteM:'{r}% monthly = {a}% simple annual.',
+asmSimple:'Simple-interest mode: interest = loan amount × annual rate × months ÷ 12. Assumes the full principal remains outstanding throughout, with no partial repayments. Principal repayment is separate and is not counted as an expense.',
+asmEmi:'Reducing-balance EMI mode: assumes equal monthly instalments fully repay the loan over each scenario period. Interest shown is total instalments minus principal. Actual lender schedules, fees and dates may differ.',
+footer:'Paddy Trade Planner · Estimates only. Add transport, storage, labour, taxes, processing fees and any other costs before making a business decision.'},
+kn:{title:'ಭತ್ತ ವ್ಯಾಪಾರ ಲಾಭ ಯೋಜಕ',brand:'ಭತ್ತ ವ್ಯಾಪಾರ ಯೋಜಕ',offline:'ಆಫ್‌ಲೈನ್ · ನಿಯೋಜನೆಗೆ ಸಿದ್ಧ',langLabel:'ಭಾಷೆ',
+h1:'ವ್ಯಾಪಾರ ಮಾಡುವ ಮೊದಲು ನಿಮ್ಮ ಲಾಭ ತಿಳಿಯಿರಿ.',sub:'ಭತ್ತದ ಚೀಲಗಳ ಖರೀದಿಯನ್ನು ಯೋಜಿಸಿ, ಮಾರಾಟ ಬೆಲೆಗಳನ್ನು ಹೋಲಿಸಿ, ನಿರ್ವಹಣಾ ಶುಲ್ಕಗಳನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಸಾಲದ ವೆಚ್ಚವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.',
+inputs:'ವ್ಯಾಪಾರದ ಮಾಹಿತಿ',hint:'ಯಾವುದೇ ಮೌಲ್ಯವನ್ನು ಬದಲಿಸಿ. ಎಲ್ಲಾ ಫಲಿತಾಂಶಗಳು ತಕ್ಷಣ ಮರುಲೆಕ್ಕಾಚಾರವಾಗುತ್ತವೆ.',gStock:'ದಾಸ್ತಾನು ಮತ್ತು ವ್ಯಾಪಾರ',qty:'ಚೀಲಗಳ ಸಂಖ್ಯೆ',buy:'ಖರೀದಿ ಬೆಲೆ',perPkt:'/ ಚೀಲಕ್ಕೆ',
+sellA:'ಮಾರಾಟ ಬೆಲೆ A',sellB:'ಮಾರಾಟ ಬೆಲೆ B',comparison:'ಹೋಲಿಕೆಗೆ',handlingLbl:'ನಿರ್ವಹಣೆ / ಇತರ ಶುಲ್ಕಗಳು',perPacketS:'ಪ್ರತಿ ಚೀಲಕ್ಕೆ',gLoan:'ಸಾಲದ ವಿವರಗಳು',loanAmt:'ಸಾಲದ ಮೊತ್ತ (₹)',
+rateFmt:'ಬಡ್ಡಿ ದರದ ರೂಪ',annualPct:'ವಾರ್ಷಿಕ %',monthlyPer100:'ಮಾಸಿಕ ₹100ಕ್ಕೆ ₹',method:'ಬಡ್ಡಿ ಲೆಕ್ಕಾಚಾರದ ವಿಧಾನ',
+mSimple:'ಸರಳ ಬಡ್ಡಿ · ಪೂರ್ಣ ಸಾಲ ಬಾಕಿ',mEmi:'ಇಳಿಕೆ-ಬಾಕಿ EMI · ತಿಂಗಳಿಗೊಮ್ಮೆ ಮರುಪಾವತಿ',periods:'ಮಾರಾಟ ಅವಧಿಗಳ ಹೋಲಿಕೆ (ತಿಂಗಳು)',periodA:'ಅವಧಿ A',periodB:'ಅವಧಿ B',
+reset:'ಉದಾಹರಣೆಗೆ ಮರುಹೊಂದಿಸಿ',print:'ಮುದ್ರಿಸಿ',mPurchase:'ಒಟ್ಟು ಖರೀದಿ ವೆಚ್ಚ',mPurchaseS:'ಚೀಲಗಳು × ಖರೀದಿ ಬೆಲೆ',mHandling:'ಒಟ್ಟು ನಿರ್ವಹಣಾ ವೆಚ್ಚ',mHandlingS:'ಚೀಲಗಳು × ಪ್ರತಿ ಚೀಲದ ಶುಲ್ಕ',mMonthly:'ಮಾಸಿಕ ಬಡ್ಡಿ ವೆಚ್ಚ',
+monthlyFmt:'ಮಾಸಿಕ {v}%',cScen:'ಲಾಭದ ಸನ್ನಿವೇಶಗಳು',cScenP:'ಪ್ರತಿ ಮಾರಾಟ ಬೆಲೆಯನ್ನು ಎರಡೂ ಅವಧಿಗಳೊಂದಿಗೆ ಹೋಲಿಸಲಾಗಿದೆ.',loan:'ಸಾಲ: ',
+cComp:'ಪಕ್ಕ-ಪಕ್ಕದ ಹೋಲಿಕೆ',cCompP:'ಮಾರಾಟ, ಒಟ್ಟು ಲಾಭ, ಸಾಲದ ಬಡ್ಡಿ ಮತ್ತು ನಿವ್ವಳ ಲಾಭ.',fourScen:'4 ಸನ್ನಿವೇಶಗಳು',
+thScen:'ಸನ್ನಿವೇಶ',thSales:'ಮಾರಾಟ',thGross:'ಒಟ್ಟು ಲಾಭ',thInt:'ಬಡ್ಡಿ',thNet:'ನಿವ್ವಳ ಲಾಭ',
+cBreak:'ವ್ಯಾಪಾರ ವಿವರ',cBreakP:'ಸಮತೋಲನ ಬೆಲೆ ಮತ್ತು ಪ್ರತಿ ಚೀಲದ ಲಾಭ.',beTitle:'ಸಮತೋಲನ ಮಾರಾಟ ಬೆಲೆ',
+beDesc:'ಖರೀದಿ, ನಿರ್ವಹಣೆ ಮತ್ತು ಬಡ್ಡಿಯನ್ನು ಭರಿಸಲು ಮೊದಲ ಸನ್ನಿವೇಶದ ಅವಧಿಗೆ ಬೇಕಾಗುವ ಅಂದಾಜು ಕನಿಷ್ಠ ಬೆಲೆ.',ppTitle:'ಪ್ರತಿ ಚೀಲದ ನಿವ್ವಳ ಲಾಭ',ppDesc:'ಮೊದಲ ಸನ್ನಿವೇಶದ ನಿವ್ವಳ ಲಾಭವನ್ನು ಚೀಲಗಳ ಸಂಖ್ಯೆಯಿಂದ ಭಾಗಿಸಲಾಗಿದೆ.',
+sellAt:'{p} / ಚೀಲಕ್ಕೆ ಮಾರಾಟ',months:'ತಿಂಗಳು',estNet:'ಅಂದಾಜು ನಿವ್ವಳ ಲಾಭ',totalSales:'ಒಟ್ಟು ಮಾರಾಟ',grossTrading:'ಒಟ್ಟು ವ್ಯಾಪಾರ ಲಾಭ',handlingCosts:'ನಿರ್ವಹಣೆ / ಇತರ ವೆಚ್ಚ',loanInterest:'ಸಾಲದ ಬಡ್ಡಿ',netPerPkt:'ನಿವ್ವಳ ಲಾಭ / ಚೀಲ',
+rateLblA:'ವಾರ್ಷಿಕ ಬಡ್ಡಿ ದರ (%)',rateLblM:'₹100ಕ್ಕೆ ಮಾಸಿಕ ಬಡ್ಡಿ (₹)',
+noteA:'{r}% ವಾರ್ಷಿಕ = {m}% ಮಾಸಿಕ.',noteM:'{r}% ಮಾಸಿಕ = {a}% ಸರಳ ವಾರ್ಷಿಕ.',
+asmSimple:'ಸರಳ ಬಡ್ಡಿ ವಿಧಾನ: ಬಡ್ಡಿ = ಸಾಲದ ಮೊತ್ತ × ವಾರ್ಷಿಕ ದರ × ತಿಂಗಳುಗಳು ÷ 12. ಸಂಪೂರ್ಣ ಮೂಲಧನ ಬಾಕಿ ಇರುತ್ತದೆ, ಭಾಗಶಃ ಮರುಪಾವತಿ ಇಲ್ಲ ಎಂದು ಭಾವಿಸಲಾಗಿದೆ. ಮೂಲಧನದ ಮರುಪಾವತಿ ಬೇರೆ ವಿಷಯ; ಅದನ್ನು ವೆಚ್ಚವೆಂದು ಪರಿಗಣಿಸಲಾಗುವುದಿಲ್ಲ.',
+asmEmi:'ಇಳಿಕೆ-ಬಾಕಿ EMI ವಿಧಾನ: ಪ್ರತಿ ಸನ್ನಿವೇಶದ ಅವಧಿಯಲ್ಲಿ ಸಮಾನ ಮಾಸಿಕ ಕಂತುಗಳಲ್ಲಿ ಸಾಲ ಸಂಪೂರ್ಣ ಮರುಪಾವತಿಯಾಗುತ್ತದೆ ಎಂದು ಭಾವಿಸಲಾಗಿದೆ. ತೋರಿಸಿದ ಬಡ್ಡಿ = ಒಟ್ಟು ಕಂತುಗಳು − ಮೂಲಧನ. ನಿಜವಾದ ಸಾಲದಾತರ ವೇಳಾಪಟ್ಟಿ, ಶುಲ್ಕಗಳು ಮತ್ತು ದಿನಾಂಕಗಳು ಬೇರೆಯಾಗಿರಬಹುದು.',
+footer:'ಭತ್ತ ವ್ಯಾಪಾರ ಯೋಜಕ · ಇವು ಅಂದಾಜುಗಳು ಮಾತ್ರ. ವ್ಯಾಪಾರ ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವ ಮೊದಲು ಸಾಗಾಣಿಕೆ, ಸಂಗ್ರಹಣೆ, ಕೂಲಿ, ತೆರಿಗೆ, ಸಂಸ್ಕರಣಾ ಶುಲ್ಕ ಮತ್ತು ಇತರ ವೆಚ್ಚಗಳನ್ನು ಸೇರಿಸಿ.'}};
+let lang='en';
+try{const sv=localStorage.getItem('paddyLang');lang=sv&&I18N[sv]?sv:((navigator.language||'').toLowerCase().startsWith('kn')?'kn':'en')}catch(e){}
+const t=(k,v)=>{let x=(I18N[lang][k]??I18N.en[k]??k);if(v)for(const j in v)x=x.replace('{'+j+'}',v[j]);return x};
+function applyLang(){document.documentElement.lang=lang;document.title=t('title');
+document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=t(e.dataset.i18n));
+document.querySelectorAll('[data-i18n-aria]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.i18nAria)));
+$('lang').value=lang;$('lang').setAttribute('aria-label',t('langLabel'))}
 function annualRate(){return $('annual').checked?val('rate'):val('rate')*12}
 function interest(p,rate,months,method){let r=rate/1200,n=Math.max(1,Math.round(months));if(method==='simple')return p*r*n;if(!r)return 0;let emi=p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);return emi*n-p}
 function draw(){let q=val('qty'),buy=val('buy'),loan=val('loan'),cost=val('expense'),rate=annualRate(),monthly=rate/12,periods=[Math.max(1,Math.round(val('m1'))),Math.max(1,Math.round(val('m2')))],prices=[val('sell1'),val('sell2')],method=$('method').value,purchase=q*buy,handling=q*cost;
-$('purchase').textContent=money(purchase);$('handling').textContent=money(handling);$('monthlyCost').textContent=money(loan*monthly/100);$('monthlyRate').textContent=monthly.toFixed(3)+'% monthly';$('loanTag').textContent='Loan: '+money(loan);
+$('purchase').textContent=money(purchase);$('handling').textContent=money(handling);$('monthlyCost').textContent=money(loan*monthly/100);$('monthlyRate').textContent=t('monthlyFmt',{v:monthly.toFixed(3)});$('loanTag').textContent=t('loan')+money(loan);
 let arr=[];prices.forEach((price,pi)=>periods.forEach(months=>{let sales=q*price,gross=sales-purchase,int=interest(loan,rate,months,method);arr.push({price,months,sales,gross,int,net:gross-handling-int,pi})}));
-$('scenarios').innerHTML=arr.map(s=>`<article class="scenario"><header><b>Sell at ${money(s.price)} / packet</b><span>${s.months} months</span></header><div class="body"><div class="muted">ESTIMATED NET PROFIT</div><div class="profit ${s.net<0?'neg':''}">${money(s.net)}</div><div class="line"><span>Total sales</span><b>${money(s.sales)}</b></div><div class="line"><span>Gross trading profit</span><b>${money(s.gross)}</b></div><div class="line"><span>Handling / other costs</span><b>−${money(handling)}</b></div><div class="line"><span>Loan interest</span><b>−${money(s.int)}</b></div><div class="line"><span>Net profit / packet</span><b>${precise(q?s.net/q:0)}</b></div></div></article>`).join('');
-$('rows').innerHTML=arr.map(s=>`<tr><td data-label="Scenario"><b>${money(s.price)}</b> · ${s.months} months</td><td data-label="Sales">${money(s.sales)}</td><td data-label="Gross profit">${money(s.gross)}</td><td data-label="Interest">${money(s.int)}</td><td data-label="Net profit"><strong style="color:${s.net<0?'#c2414b':'#07845c'}">${money(s.net)}</strong></td></tr>`).join('');
-let first=arr[0],be=q?(purchase+handling+first.int)/q:0;$('breakEven').textContent=money(be)+' / packet';$('perPacket').textContent=precise(q?first.net/q:0);
-$('rateLabel').textContent=$('annual').checked?'Annual interest rate (%)':'Monthly interest per ₹100 (₹)';$('rateNote').textContent=$('annual').checked?`${rate.toFixed(2)}% annual = ${monthly.toFixed(3)}% monthly.`:`${val('rate').toFixed(2)}% monthly = ${rate.toFixed(2)}% simple annual.`;
-$('assumption').textContent=method==='simple'?'Simple-interest mode: interest = loan amount × annual rate × months ÷ 12. Assumes the full principal remains outstanding throughout, with no partial repayments. Principal repayment is separate and is not counted as an expense.':'Reducing-balance EMI mode: assumes equal monthly instalments fully repay the loan over each scenario period. Interest shown is total instalments minus principal. Actual lender schedules, fees and dates may differ.'}
-['qty','buy','sell1','sell2','expense','loan','rate','m1','m2','method'].forEach(id=>$(id).addEventListener('input',draw));document.querySelectorAll('input[name=type]').forEach(x=>x.addEventListener('change',draw));$('reset').onclick=()=>{Object.entries({qty:500,buy:2500,sell1:3200,sell2:3500,expense:180,loan:1250000,rate:10.5,m1:5,m2:10}).forEach(([k,v])=>$(k).value=v);$('annual').checked=true;$('method').value='simple';draw()};$('print').onclick=()=>window.print();draw();
+$('scenarios').innerHTML=arr.map(s=>`<article class="scenario"><header><b>${t('sellAt',{p:money(s.price)})}</b><span>${s.months} ${t('months')}</span></header><div class="body"><div class="muted">${t('estNet')}</div><div class="profit ${s.net<0?'neg':''}">${money(s.net)}</div><div class="line"><span>${t('totalSales')}</span><b>${money(s.sales)}</b></div><div class="line"><span>${t('grossTrading')}</span><b>${money(s.gross)}</b></div><div class="line"><span>${t('handlingCosts')}</span><b>−${money(handling)}</b></div><div class="line"><span>${t('loanInterest')}</span><b>−${money(s.int)}</b></div><div class="line"><span>${t('netPerPkt')}</span><b>${precise(q?s.net/q:0)}</b></div></div></article>`).join('');
+$('rows').innerHTML=arr.map(s=>`<tr><td data-label="${t('thScen')}"><b>${money(s.price)}</b> · ${s.months} ${t('months')}</td><td data-label="${t('thSales')}">${money(s.sales)}</td><td data-label="${t('thGross')}">${money(s.gross)}</td><td data-label="${t('thInt')}">${money(s.int)}</td><td data-label="${t('thNet')}"><strong style="color:${s.net<0?'#c2414b':'#07845c'}">${money(s.net)}</strong></td></tr>`).join('');
+let first=arr[0],be=q?(purchase+handling+first.int)/q:0;$('breakEven').textContent=money(be)+' '+t('perPkt');$('perPacket').textContent=precise(q?first.net/q:0);
+$('rateLabel').textContent=t($('annual').checked?'rateLblA':'rateLblM');$('rateNote').textContent=$('annual').checked?t('noteA',{r:rate.toFixed(2),m:monthly.toFixed(3)}):t('noteM',{r:val('rate').toFixed(2),a:rate.toFixed(2)});
+$('assumption').textContent=t(method==='simple'?'asmSimple':'asmEmi')}
+['qty','buy','sell1','sell2','expense','loan','rate','m1','m2','method'].forEach(id=>$(id).addEventListener('input',draw));document.querySelectorAll('input[name=type]').forEach(x=>x.addEventListener('change',draw));$('reset').onclick=()=>{Object.entries({qty:500,buy:2500,sell1:3200,sell2:3500,expense:180,loan:1250000,rate:10.5,m1:5,m2:10}).forEach(([k,v])=>$(k).value=v);$('annual').checked=true;$('method').value='simple';applyLang();draw()};$('print').onclick=()=>window.print();$('lang').addEventListener('change',e=>{lang=e.target.value;try{localStorage.setItem('paddyLang',lang)}catch(x){}applyLang();draw()});applyLang();draw();
 </script></body></html>
