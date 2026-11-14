@@ -118,7 +118,7 @@ main{padding-top:28px}
 <div class="field"><label><span data-i18n="sellB">Sell price B</span> <small data-i18n="comparison">comparison</small></label><div class="money"><b>₹</b><input id="sell2" type="number" min="0" value="3500"></div></div>
 <div class="field"><label><span data-i18n="handlingLbl">Handling / other charges</span> <small data-i18n="perPacketS">per packet</small></label><div class="money"><b>₹</b><input id="expense" type="number" min="0" value="180"></div></div>
 <div class="group" data-i18n="gLoan">Borrowing details</div>
-<div class="field"><label data-i18n="loanAmt">Loan amount (₹)</label><input id="loan" type="number" min="0" value="1250000"></div>
+<div class="field"><label data-i18n="loanAmt">Loan amount (₹)</label><input id="loan" type="number" min="0" value="1250000"><p class="hint" style="margin:5px 0 0" data-i18n="loanHint">Auto = packets × buy price. You can edit it; packets adjust (buy price stays).</p></div>
 <div class="field"><label data-i18n="rateFmt">Interest rate format</label><div class="radio"><div class="opt"><input type="radio" name="type" id="annual" value="annual" checked><label for="annual" data-i18n="annualPct">Annual %</label></div><div class="opt"><input type="radio" name="type" id="monthly" value="monthly"><label for="monthly" data-i18n="monthlyPer100">Monthly ₹ per ₹100</label></div></div></div>
 <div class="field"><label id="rateLabel">Annual interest rate (%)</label><input id="rate" type="number" min="0" step=".01" value="10.5"></div>
 <div class="field"><label data-i18n="method">Interest calculation method</label><select id="method"><option value="simple" data-i18n="mSimple">Simple interest · Full loan outstanding</option><option value="emi" data-i18n="mEmi">Reducing-balance EMI · Repaid monthly</option></select></div>
@@ -152,7 +152,7 @@ rateLblA:'Annual interest rate (%)',rateLblM:'Monthly interest per ₹100 (₹)'
 noteA:'{r}% annual = {m}% monthly.',noteM:'{r}% monthly = {a}% simple annual.',
 asmSimple:'Simple-interest mode: interest = loan amount × annual rate × months ÷ 12. Assumes the full principal remains outstanding throughout, with no partial repayments. Principal repayment is separate and is not counted as an expense.',
 asmEmi:'Reducing-balance EMI mode: assumes equal monthly instalments fully repay the loan over each scenario period. Interest shown is total instalments minus principal. Actual lender schedules, fees and dates may differ.',
-footer:'Paddy Trade Planner · Estimates only. Add transport, storage, labour, taxes, processing fees and any other costs before making a business decision.'},
+loanHint:'Auto = packets × buy price. You can edit it; packets adjust (buy price stays).',footer:'Paddy Trade Planner · Estimates only. Add transport, storage, labour, taxes, processing fees and any other costs before making a business decision.'},
 kn:{title:'ಭತ್ತ ವ್ಯಾಪಾರ ಲಾಭ ಯೋಜಕ',brand:'ಭತ್ತ ವ್ಯಾಪಾರ ಯೋಜಕ',offline:'ಆಫ್‌ಲೈನ್ · ನಿಯೋಜನೆಗೆ ಸಿದ್ಧ',langLabel:'ಭಾಷೆ',
 h1:'ವ್ಯಾಪಾರ ಮಾಡುವ ಮೊದಲು ನಿಮ್ಮ ಲಾಭ ತಿಳಿಯಿರಿ.',sub:'ಭತ್ತದ ಚೀಲಗಳ ಖರೀದಿಯನ್ನು ಯೋಜಿಸಿ, ಮಾರಾಟ ಬೆಲೆಗಳನ್ನು ಹೋಲಿಸಿ, ನಿರ್ವಹಣಾ ಶುಲ್ಕಗಳನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಸಾಲದ ವೆಚ್ಚವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.',
 inputs:'ವ್ಯಾಪಾರದ ಮಾಹಿತಿ',hint:'ಯಾವುದೇ ಮೌಲ್ಯವನ್ನು ಬದಲಿಸಿ. ಎಲ್ಲಾ ಫಲಿತಾಂಶಗಳು ತಕ್ಷಣ ಮರುಲೆಕ್ಕಾಚಾರವಾಗುತ್ತವೆ.',gStock:'ದಾಸ್ತಾನು ಮತ್ತು ವ್ಯಾಪಾರ',qty:'ಚೀಲಗಳ ಸಂಖ್ಯೆ',buy:'ಖರೀದಿ ಬೆಲೆ',perPkt:'/ ಚೀಲಕ್ಕೆ',
@@ -170,7 +170,7 @@ rateLblA:'ವಾರ್ಷಿಕ ಬಡ್ಡಿ ದರ (%)',rateLblM:'₹100ಕ�
 noteA:'{r}% ವಾರ್ಷಿಕ = {m}% ಮಾಸಿಕ.',noteM:'{r}% ಮಾಸಿಕ = {a}% ಸರಳ ವಾರ್ಷಿಕ.',
 asmSimple:'ಸರಳ ಬಡ್ಡಿ ವಿಧಾನ: ಬಡ್ಡಿ = ಸಾಲದ ಮೊತ್ತ × ವಾರ್ಷಿಕ ದರ × ತಿಂಗಳುಗಳು ÷ 12. ಸಂಪೂರ್ಣ ಮೂಲಧನ ಬಾಕಿ ಇರುತ್ತದೆ, ಭಾಗಶಃ ಮರುಪಾವತಿ ಇಲ್ಲ ಎಂದು ಭಾವಿಸಲಾಗಿದೆ. ಮೂಲಧನದ ಮರುಪಾವತಿ ಬೇರೆ ವಿಷಯ; ಅದನ್ನು ವೆಚ್ಚವೆಂದು ಪರಿಗಣಿಸಲಾಗುವುದಿಲ್ಲ.',
 asmEmi:'ಇಳಿಕೆ-ಬಾಕಿ EMI ವಿಧಾನ: ಪ್ರತಿ ಸನ್ನಿವೇಶದ ಅವಧಿಯಲ್ಲಿ ಸಮಾನ ಮಾಸಿಕ ಕಂತುಗಳಲ್ಲಿ ಸಾಲ ಸಂಪೂರ್ಣ ಮರುಪಾವತಿಯಾಗುತ್ತದೆ ಎಂದು ಭಾವಿಸಲಾಗಿದೆ. ತೋರಿಸಿದ ಬಡ್ಡಿ = ಒಟ್ಟು ಕಂತುಗಳು − ಮೂಲಧನ. ನಿಜವಾದ ಸಾಲದಾತರ ವೇಳಾಪಟ್ಟಿ, ಶುಲ್ಕಗಳು ಮತ್ತು ದಿನಾಂಕಗಳು ಬೇರೆಯಾಗಿರಬಹುದು.',
-footer:'ಭತ್ತ ವ್ಯಾಪಾರ ಯೋಜಕ · ಇವು ಅಂದಾಜುಗಳು ಮಾತ್ರ. ವ್ಯಾಪಾರ ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವ ಮೊದಲು ಸಾಗಾಣಿಕೆ, ಸಂಗ್ರಹಣೆ, ಕೂಲಿ, ತೆರಿಗೆ, ಸಂಸ್ಕರಣಾ ಶುಲ್ಕ ಮತ್ತು ಇತರ ವೆಚ್ಚಗಳನ್ನು ಸೇರಿಸಿ.'}};
+loanHint:'ಸ್ವಯಂ = ಚೀಲಗಳು × ಖರೀದಿ ಬೆಲೆ. ನೀವು ಬದಲಿಸಬಹುದು; ಆಗ ಚೀಲಗಳ ಸಂಖ್ಯೆ ಹೊಂದಾಣಿಕೆಯಾಗುತ್ತದೆ (ಖರೀದಿ ಬೆಲೆ ಬದಲಾಗುವುದಿಲ್ಲ).',footer:'ಭತ್ತ ವ್ಯಾಪಾರ ಯೋಜಕ · ಇವು ಅಂದಾಜುಗಳು ಮಾತ್ರ. ವ್ಯಾಪಾರ ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವ ಮೊದಲು ಸಾಗಾಣಿಕೆ, ಸಂಗ್ರಹಣೆ, ಕೂಲಿ, ತೆರಿಗೆ, ಸಂಸ್ಕರಣಾ ಶುಲ್ಕ ಮತ್ತು ಇತರ ವೆಚ್ಚಗಳನ್ನು ಸೇರಿಸಿ.'}};
 let lang='en';
 try{const sv=localStorage.getItem('paddyLang');lang=sv&&I18N[sv]?sv:((navigator.language||'').toLowerCase().startsWith('kn')?'kn':'en')}catch(e){}
 const t=(k,v)=>{let x=(I18N[lang][k]??I18N.en[k]??k);if(v)for(const j in v)x=x.replace('{'+j+'}',v[j]);return x};
@@ -188,5 +188,7 @@ $('rows').innerHTML=arr.map(s=>`<tr><td data-label="${t('thScen')}"><b>${money(s
 let first=arr[0],be=q?(purchase+handling+first.int)/q:0;$('breakEven').textContent=money(be)+' '+t('perPkt');$('perPacket').textContent=precise(q?first.net/q:0);
 $('rateLabel').textContent=t($('annual').checked?'rateLblA':'rateLblM');$('rateNote').textContent=$('annual').checked?t('noteA',{r:rate.toFixed(2),m:monthly.toFixed(3)}):t('noteM',{r:val('rate').toFixed(2),a:rate.toFixed(2)});
 $('assumption').textContent=t(method==='simple'?'asmSimple':'asmEmi')}
-['qty','buy','sell1','sell2','expense','loan','rate','m1','m2','method'].forEach(id=>$(id).addEventListener('input',draw));document.querySelectorAll('input[name=type]').forEach(x=>x.addEventListener('change',draw));$('reset').onclick=()=>{Object.entries({qty:500,buy:2500,sell1:3200,sell2:3500,expense:180,loan:1250000,rate:10.5,m1:5,m2:10}).forEach(([k,v])=>$(k).value=v);$('annual').checked=true;$('method').value='simple';applyLang();draw()};$('print').onclick=()=>window.print();$('lang').addEventListener('change',e=>{lang=e.target.value;try{localStorage.setItem('paddyLang',lang)}catch(x){}applyLang();draw()});applyLang();draw();
+['sell1','sell2','expense','rate','m1','m2','method'].forEach(id=>$(id).addEventListener('input',draw));document.querySelectorAll('input[name=type]').forEach(x=>x.addEventListener('change',draw));$('reset').onclick=()=>{Object.entries({qty:500,buy:2500,sell1:3200,sell2:3500,expense:180,loan:1250000,rate:10.5,m1:5,m2:10}).forEach(([k,v])=>$(k).value=v);$('annual').checked=true;$('method').value='simple';applyLang();draw()};$('print').onclick=()=>window.print();['qty','buy'].forEach(id=>$(id).addEventListener('input',()=>{$('loan').value=Math.round(val('qty')*val('buy')*100)/100;draw()}));
+$('loan').addEventListener('input',()=>{const b=val('buy'),l=val('loan');if(b>0&&l>0)$('qty').value=Math.floor(l/b+1e-9);draw()});
+$('lang').addEventListener('change',e=>{lang=e.target.value;try{localStorage.setItem('paddyLang',lang)}catch(x){}applyLang();draw()});applyLang();draw();
 </script></body></html>
